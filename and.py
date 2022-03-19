@@ -6,15 +6,15 @@ def main(data, modelName, plotName, eta, epochs):
 
     X, y = prepare_data(df_AND)
 
-    model_and = Perceptron(eta=eta, epochs=epochs)
-    model_and.fit(X, y)
+    model = Perceptron(eta=eta, epochs=epochs)
+    model.fit(X, y)
 
-    _ = model_and.total_loss()
+    _ = model.total_loss()
 
 
-    model_and.save(filename=modelName, model_dir="model")
+    model.save(filename=modelName, model_dir="model")
 
-    save_plot(df_AND, model_and, filename=plotName)
+    save_plot(df_AND, model, filename=plotName)
 
 # entry point 
 if __name__ == "__main__":
